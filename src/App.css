@@ -1,0 +1,66 @@
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.footer{
+  background-color: #D1C4E9;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+  background: #9575CD ;
+  color:floralwhite;
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+.navbar-dark {
+  background: linear-gradient(to left, #d0eef0 0%, #47ccdd 100%);
+  
+  
+}
+.heading{
+  color: black;
+  font-size: 40px;
+  font-family: "Cursive", 	Brush Script MT, cursive;
+}
+.img1{
+  max-width: 100%;
+}
+.carousel-item > img{
+  width: 100%;
+}
+.footer{
+  background: linear-gradient(to left, #d0eef0 0%, #47ccdd 100%);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+.jumbotron{
+  background-color: #8fe0e7;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+
+
+
+
