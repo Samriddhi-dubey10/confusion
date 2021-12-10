@@ -297,7 +297,7 @@ class CommentForm extends Component {
         })
         return (
             <div className='col-12 col-md-5 m-1'>
-                <h4> Comments </h4>
+                <h4> About Test </h4>
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>

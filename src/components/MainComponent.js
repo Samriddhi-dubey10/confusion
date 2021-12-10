@@ -11,8 +11,6 @@ import { addComment, fetchDishes } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { actions } from 'react-redux-form';
-import Example from './car';
-import { Col } from 'reactstrap';
 
 
 const mapStateToProps = state => {
@@ -72,7 +70,7 @@ class Main extends Component {
                   isLoading={this.props.dishes.isLoading}
                   errMess={this.props.dishes.errMess}
                   comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
-                  addComment={this.props.addComment}
+                
                 />
             );
           };
@@ -99,6 +97,7 @@ class Main extends Component {
                     {/* if url dosesnt match, bydefault redirect to */}
                     <Redirect to="/home" />
                 </Switch>
+               
 
                 <Footer></Footer>
             </div> 

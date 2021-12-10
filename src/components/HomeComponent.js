@@ -46,7 +46,7 @@ function Home(props) {
            
 
            <div className="col-md">
-               <h1>Best Health Packages</h1>
+               <h1 className='head'>Best Health Packages</h1>
            </div>
            <div className="col col-lg-2">
            <a href="./menu" class="btn btn-info ">View All </a>
@@ -78,7 +78,7 @@ function Home(props) {
       <div class="container">
    
     <div className ="row">
-    <div class="col-12 col-sm-6">
+    <div class="col-12 col-sm-6  mr-auto">
                     <h1>Excellence of Health Check</h1>
                     <p>Health Check is one of the most trusted  in diagnostics today, with a network of fully automated labs across major cities in India, that are hardcoded with innovative technology, advanced robotics and intelligent digital solutions.
 
