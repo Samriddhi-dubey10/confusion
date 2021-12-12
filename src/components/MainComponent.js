@@ -7,7 +7,7 @@ import Contact from './ContactComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import DishDetail from './DishdetailComponent';
-import { addComment, fetchDishes } from '../redux/ActionCreators';
+import {  fetchDishes } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { actions } from 'react-redux-form';
@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => ({
   
-    addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment)),
+    
     fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))}
   });

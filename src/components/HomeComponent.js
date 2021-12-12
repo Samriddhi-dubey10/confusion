@@ -84,11 +84,11 @@ function Home(props) {
 
 With an extensive team of highly qualified lab technicians and pathologists, our single-minded purpose is to follow the strictest of quality measures to maintain accuracy for each test we perform.!</p>
 <a class="btn btn-warning btn-lg" href="./AboutUs" role="button">Know more</a>  
-                
-                </div>
-    <img className="ml-auto" src="../assets/images/lab.jpg" alt="lab "/>
 
-  
+
+                </div>
+               
+                <img className="ml-auto" src="../assets/images/lab.jpg" alt="lab "/>
     
      </div>
     

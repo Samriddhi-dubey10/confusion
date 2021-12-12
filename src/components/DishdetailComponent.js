@@ -7,7 +7,6 @@ import {
 
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
-import { Loading } from './LoadingComponent';
 
 
 
@@ -35,8 +34,8 @@ class CommentForm extends Component {
     }
 
     handleCommentFormSubmit(values) {
-       
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        console.log("Current State is: " + JSON.stringify(values));
+        alert("Current State is: " + JSON.stringify(values));
 
 
     }
@@ -52,7 +51,7 @@ class CommentForm extends Component {
         return (
             <React.Fragment>
                 <Button outline onClick={this.toggleCommentFormModal}>
-                    <span className="fa fa-pencil fa-lg"></span> Book Now
+                    <span className="fa fa-comments fa-lg"></span> Book Now
                 </Button>
 
 
@@ -65,7 +64,7 @@ class CommentForm extends Component {
 
                             {/* rating */}
                             <Row className="form-group">
-                                <Label htmlFor="booking" md={12} >First Name</Label>
+                                <Label htmlFor="rating" md={12} >First Name</Label>
                                 <Col md={10}>
                                     <Control.text model=".firstname" id="firstname" name="firstname"
                                         placeholder="First Name"
@@ -86,6 +85,10 @@ class CommentForm extends Component {
                                      />
                                 </Col>
                             </Row>
+
+
+                            {/* author */}
+                       
                             <Row className="form-group">
                                 <Label htmlFor="lastname" md={12}>Last Name</Label>
                                 <Col md={10}>
@@ -110,7 +113,31 @@ class CommentForm extends Component {
                             </Row>
 
 
-                            {/* author */}
+
+
+
+                            {/* comment */}
+                            <Row className="form-group">
+                                <Label htmlFor="comment" md={12}>Address</Label>
+                                <Col md={12}>
+                                    <Control.textarea model=".address" id="address" name="address"
+                                        rows="6"
+                                        className="form-control"
+                                        validators={{
+                                            required
+                                        }}
+                                    />
+                                    <Errors
+                                        className="text-danger"
+                                        model=".author"
+                                        show="touched"
+                                        messages={{
+                                            required: 'Required',
+                                        }}
+                                    />
+                                </Col>
+
+                            </Row>
                             <Row className="form-group">
                                 <Label htmlFor="telnum" md={12}>Contact Tel.</Label>
                                 <Col md={10}>
@@ -155,32 +182,6 @@ class CommentForm extends Component {
                                      />
                                 </Col>
                             </Row>
-
-
-
-
-                            
-                            <Row className="form-group">
-                                <Label htmlFor="booking" md={12}>Address</Label>
-                                <Col md={12}>
-                                    <Control.textarea model=".booking" id="booking" name="booking"
-                                        rows="6"
-                                        className="form-control"
-                                        validators={{
-                                            required
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".author"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                        }}
-                                    />
-                                </Col>
-
-                            </Row>
                             <Row className="form-group">
                             <label class="control-label" for="time">Appointment For</label>
                             <Col md={12}>
@@ -193,7 +194,7 @@ class CommentForm extends Component {
                             </Col>
                                         
                                 </Row>
-                            <Row className="form-group">
+                                <Row className="form-group">
                             <label class="control-label" for="time">Preferred Time</label>
                             <Col md={12}>
                             <select id="time" name="time" class="form-control">
@@ -204,7 +205,7 @@ class CommentForm extends Component {
                             </Col>
                                         
                                 </Row>
-                            <Row className="form-group">
+                                <Row className="form-group">
                                 <Col md={{size: 10, offset: 2}}>
                                     <div className="form-check">
                                         <Label check>
@@ -223,6 +224,7 @@ class CommentForm extends Component {
                                     </Control.select>
                                 </Col>
                             </Row>
+
 
                             {/* submit button */}
                             <Row className="form-group">
@@ -274,7 +276,7 @@ class CommentForm extends Component {
         }
     }
 
-    function RenderComments({comments, addComment,dishId}){
+    function RenderComments({dish,comments}){
         if (comments == null) {
             return (<div></div>)
         }
@@ -297,38 +299,24 @@ class CommentForm extends Component {
         })
         return (
             <div className='col-12 col-md-5 m-1'>
-                <h4> About Test </h4>
+                <h4> Comments </h4>
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>
-                <CommentForm dishId={dishId} addComment={addComment} />
+                <CommentForm dish={dish} comments={comments} />
             </div>
         )
     }
 
 
     const DishDetail = (props) => {
-        if (props.isLoading) {
-            return(
-                <div className="container">
-                    <div className="row">            
-                        <Loading />
-                    </div>
-                </div>
-            );
-        }
-        else if (props.errMess) {
-            return(
-                <div className="container">
-                    <div className="row">            
-                        <h4>{props.errMess}</h4>
-                    </div>
-                </div>
-            );
-        }
-        else if (props.dish != null) 
 
+        const dish = props.dish
         
+    
+        if (dish == null) {
+            return (<div></div>);
+        }
 
         return (
             <div className="container">
@@ -350,10 +338,7 @@ class CommentForm extends Component {
 
                 <div className='row'>
                     <RenderDish dish={ props.dish } />
-                    <RenderComments comments={props.comments}
-        addComment={props.addComment}
-        dishId={props.dish.id}
-      />
+                    <RenderComments dish={props.dish} comments={ props.comments } />
                 </div>
 
 

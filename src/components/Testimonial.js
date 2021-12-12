@@ -16,11 +16,11 @@ import { Carousel } from "react-responsive-carousel";
         <div>
           <img src="../assets/images/test1.jpg" />
           <div className="myCarousel">
-            <h3>Shirley Fultz</h3>
-            <h4>Designer</h4>
+            <h3>Rakhi Desai</h3>
+            <h4>Banglore</h4>
             <p>
-              It's freeing to be able to catch up on customized news and not be
-              distracted by a social media element on the same site
+            "Speedy Report"
+I would like to appreciate about Health Check service and speedy report delivery. I really appreciate their efforts.
             </p>
           </div>
         </div>
@@ -28,11 +28,11 @@ import { Carousel } from "react-responsive-carousel";
         <div>
           <img src="../assets/images/test2.jpg" />
           <div className="myCarousel">
-            <h3>Daniel Keystone</h3>
-            <h4>Designer</h4>
+            <h3>Sakshi Shukla</h3>
+            <h4>Mumbai</h4>
             <p>
-              The simple and intuitive design makes it easy for me use. I highly
-              recommend Fetch to my peers.
+            "Report came on time"
+They Amazed me with their great quality of word. I got my tests done … and report came on time…
             </p>
           </div>
         </div>
@@ -40,11 +40,10 @@ import { Carousel } from "react-responsive-carousel";
         <div>
           <img src="../assets/images/test3.jpg" />
           <div className="myCarousel">
-            <h3>Theo Sorel</h3>
-            <h4>Designer</h4>
+            <h3>Megha Dubey</h3>
+            <h4>Delhi</h4>
             <p>
-              I enjoy catching up with Fetch on my laptop, or on my phone when
-              I'm on the go!
+            Very polite, quick works, punctual, responsible . All the best to your team and i wish you prosperity and success.
             </p>
           </div>
         </div>
