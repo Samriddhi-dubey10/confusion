@@ -11,6 +11,7 @@ import {  fetchDishes } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { actions } from 'react-redux-form';
+import Bottom from './BottomNav';
 
 
 const mapStateToProps = state => {
@@ -98,8 +99,10 @@ class Main extends Component {
                     <Redirect to="/home" />
                 </Switch>
                
-
+           
                 <Footer></Footer>
+                <Bottom></Bottom>
+
             </div> 
         );
 
