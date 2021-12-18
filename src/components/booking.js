@@ -9,16 +9,18 @@ class Booking extends Component {
       this.onChangeName= this.onChangeName.bind(this);
       this.onChangeEmail= this.onChangeEmail.bind(this);
       this.onChangePhone= this.onChangePhone.bind(this);
-      this.onChangePassword= this.onChangePassword.bind(this);
-      this.onChangePasswordconform= this.onChangePasswordconform.bind(this);
+      this.onChangeHealthPackage= this.onChangeHealthPackage.bind(this);
+      this.onChangeHealthPackageconform= this.onChangeHealthPackageconform.bind(this);
+      this.onChangeAddress= this.onChangeAddress.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
      
       this.state ={
         name: '',
         email:'',
         phone:'',
-        password:'',
-        passwordConform:'',
+        healthpackage:'',
+        healthpackageConform:'',
+        address:'',
      
       }
     }
@@ -41,15 +43,20 @@ class Booking extends Component {
       });
     }
      
-    onChangePassword(e){
+    onChangeHealthPackage(e){
       this.setState({
-        password:e.target.value
+        healthpackage:e.target.value
       });
     }
      
-    onChangePasswordconform(e){
+    onChangeHealthPackageconform(e){
       this.setState({
-        passwordConform:e.target.value
+        healthpackageConform:e.target.value
+      });
+    }
+    onChangeAddress(e){
+      this.setState({
+        address:e.target.value
       });
     }
      
@@ -61,8 +68,9 @@ class Booking extends Component {
             name:this.state.name,
             email:this.state.email,
             phone:this.state.phone,
-            password:this.state.password,
-            passwordConform:this.state.passwordConform,
+            healthpackage:this.state.healthpackage,
+            healthpackageConform:this.state.healthpackageConform,
+            address:this.state.address
           };
          
           axios.post('http://localhost/reactProject/insert.php',obj)
@@ -76,14 +84,15 @@ class Booking extends Component {
           name: '',
           email:'',
           phone:'',
-          password:'',
-          passwordConform:'',
+          healthpackage:'',
+          healthpackageConform:'',
+          address:'',
        
         })
         }
        
         else{
-          alert("Password mismatch")
+          alert("Healthpackage mismatch")
         }
          
       }
@@ -91,33 +100,43 @@ class Booking extends Component {
         return (
             <Form >
             <FormGroup>
+            <Label htmlFor="booking" md={12} > Name</Label>
                 
                 <Input Label="Full Name" value={this.state.name} onChange={this.onChangeName} />
             </FormGroup>
             <FormGroup>
+            <Label htmlFor="booking" md={12} > Email</Label>
                 
                 <Input Label="Email" value={this.state.email} onChange={this.onChangeEmail}  />
             </FormGroup>
             <FormGroup >
-               
+            <Label htmlFor="booking" md={12} > Phone</Label>
                     <Input Label="Phone Number" value={this.state.phone} onChange={this.onChangePhone} />
                    
               
             </FormGroup>
             <FormGroup >
-               
-            <Input Label="Password" 
-               value={this.state.password} 
-               onChange={this.onChangePassword}/>
+            <Label htmlFor="booking" md={12} > HealthPackage</Label>  
+            <Input Label="HealthPackage" 
+               value={this.state.healthpackage} 
+               onChange={this.onChangeHealthPackage}/>
                    
               
             </FormGroup>
             <FormGroup >
                
-               
-        <Input Label="Conform Password" 
-               value={this.state.passwordConform} 
-               onChange={this.onChangePasswordconform}/>
+            <Label htmlFor="booking" md={12} > Confirm HealthPackage</Label>
+        <Input Label="Confirm HealthPackage" 
+               value={this.state.healthpackageConform} 
+               onChange={this.onChangeHealthPackageconform}/>
+                      
+                 
+               </FormGroup>
+               <FormGroup>
+               <Label htmlFor="booking" md={12} > Address</Label>
+               <Input Label="Address" 
+               value={this.state.address} 
+               onChange={this.onChangeAddress}/>
                       
                  
                </FormGroup>
