@@ -6,6 +6,7 @@ import {
 } from "reactstrap";
 
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import Booking from "./booking";
 
 
 
@@ -29,16 +30,10 @@ class CommentForm extends Component {
         };
 
         this.toggleCommentFormModal = this.toggleCommentFormModal.bind(this);
-        this.handleCommentFormSubmit = this.handleCommentFormSubmit.bind(this);
-
+      
     }
 
-    handleCommentFormSubmit(values) {
-        console.log("Current State is: " + JSON.stringify(values));
-        alert("Current State is: " + JSON.stringify(values));
-
-
-    }
+    
 
     toggleCommentFormModal() {
         this.setState({
@@ -59,183 +54,12 @@ class CommentForm extends Component {
                 <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleCommentFormModal} >
                     <ModalHeader toggle={this.toggleCommentFormModal}> Book Now </ModalHeader>
                     <ModalBody>
+                        <div>
 
-                        <LocalForm onSubmit={(values) => this.handleCommentFormSubmit(values)}>
-
-                            {/* rating */}
-                            <Row className="form-group">
-                                <Label htmlFor="rating" md={12} >First Name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".firstname" id="firstname" name="firstname"
-                                        placeholder="First Name"
-                                        className="form-control"
-                                        validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15)
-                                        }}
-                                         />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".firstname"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be greater than 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
-                                     />
-                                </Col>
-                            </Row>
-
-
-                            {/* author */}
-                       
-                            <Row className="form-group">
-                                <Label htmlFor="lastname" md={12}>Last Name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".lastname" id="lastname" name="lastname"
-                                        placeholder="Last Name"
-                                        className="form-control"
-                                        validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15)
-                                        }}
-                                         />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".lastname"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be greater than 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
-                                     />
-                                </Col>
-                            </Row>
-
-
-
-
-
-                            {/* comment */}
-                            <Row className="form-group">
-                                <Label htmlFor="comment" md={12}>Address</Label>
-                                <Col md={12}>
-                                    <Control.textarea model=".address" id="address" name="address"
-                                        rows="6"
-                                        className="form-control"
-                                        validators={{
-                                            required
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".author"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                        }}
-                                    />
-                                </Col>
-
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="telnum" md={12}>Contact Tel.</Label>
-                                <Col md={10}>
-                                    <Control.text model=".telnum" id="telnum" name="telnum"
-                                        placeholder="Tel. Number"
-                                        className="form-control"
-                                        validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15), isNumber
-                                        }}
-                                         />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".telnum"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be greater than 2 numbers',
-                                            maxLength: 'Must be 15 numbers or less',
-                                            isNumber: 'Must be a number'
-                                        }}
-                                     />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                                <Label htmlFor="email" md={12}>Email</Label>
-                                <Col md={10}>
-                                    <Control.text model=".email" id="email" name="email"
-                                        placeholder="Email"
-                                        className="form-control"
-                                        validators={{
-                                            required, validEmail
-                                        }}
-                                         />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".email"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required',
-                                            validEmail: 'Invalid Email Address'
-                                        }}
-                                     />
-                                </Col>
-                            </Row>
-                            <Row className="form-group">
-                            <label class="control-label" for="time">Appointment For</label>
-                            <Col md={12}>
-                            <select id="appointmentfor" name="appointmentfor" class="form-control">
-                                            <option value="Service#1">Smart Full Body-Checkup</option>
-                                            <option value="Service#2">Healthy Heart Package</option>
-                                            <option value="Service#3">Fever Panel</option>
-                                            <option value="Service#4">Allergic Panel Pediatric</option>
-                                        </select>
-                            </Col>
-                                        
-                                </Row>
-                                <Row className="form-group">
-                            <label class="control-label" for="time">Preferred Time</label>
-                            <Col md={12}>
-                            <select id="time" name="time" class="form-control">
-                                            <option value="7:00 to 8:00">7:00 to 8:00</option>
-                                            <option value="8:00 to 9:00">8:00 to 9:00</option>
-                                            <option value="9:00 to 10:00">9:00 to 10:00</option>
-                                        </select>
-                            </Col>
-                                        
-                                </Row>
-                                <Row className="form-group">
-                                <Col md={{size: 10, offset: 2}}>
-                                    <div className="form-check">
-                                        <Label check>
-                                            <Control.checkbox model=".agree" name="agree"
-                                                className="form-check-input"
-                                                 /> {' '}
-                                                <strong>Opt-for in Whatapp Updates</strong>
-                                        </Label>
-                                    </div>
-                                </Col>
-                                <Col md={{size: 3, offset: 1}}>
-                                    <Control.select model=".contactType" name="contactType"
-                                        className="form-control">
-                                        <option>Tel.</option>
-                                        <option>Email</option>
-                                    </Control.select>
-                                </Col>
-                            </Row>
-
-
-                            {/* submit button */}
-                            <Row className="form-group">
-                                <Col>
-                                    <Button type="submit" color="primary">
-                                        Submit
-                                    </Button>
-                                </Col>
-                            </Row>
-
-                        </LocalForm>
+                        <Booking></Booking>
+                        </div>
+                      
+                      
 
                     </ModalBody>
                 </Modal>
