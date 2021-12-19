@@ -91,12 +91,23 @@ With an extensive team of highly qualified lab technicians and pathologists, our
                 <img className="ml-auto" src="../assets/images/lab.jpg" alt="lab "/>
     
      </div>
-    
-    
+     
+      
+          
+  
      
      
   </div>
+ 
 </div>
+<div class="container">
+      <div className ="row">
+    <div class="col-12 col-sm-6  mr-auto" id="chatting">
+    <iframe className='chatbot' src='https://webchat.botframework.com/embed/healthcheck123-bot?s=goSgICJX5q8.Q0FPwC24K8pT0aqjqYZyyRhsSwtrqmd7VCPRsQ6QiqU'  ></iframe>
+        </div>
+    </div>
+
+          </div>
 </div>
      
       

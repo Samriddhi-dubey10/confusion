@@ -11,7 +11,7 @@ import {  fetchDishes } from '../redux/ActionCreators';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import { actions } from 'react-redux-form';
-import Bottom from './BottomNav';
+
 
 
 const mapStateToProps = state => {
@@ -94,6 +94,7 @@ class Main extends Component {
 
                     <Route exact path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
                     <Route exact path="/aboutus" component={ AboutUsPage } />
+                  
                    
                     {/* if url dosesnt match, bydefault redirect to */}
                     <Redirect to="/home" />
@@ -101,7 +102,7 @@ class Main extends Component {
                
            
                 <Footer></Footer>
-                <Bottom></Bottom>
+                
 
             </div> 
         );

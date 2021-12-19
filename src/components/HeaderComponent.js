@@ -6,6 +6,7 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
 import { NavLink } from 'react-router-dom';
 import Example from './car';
 
+
   
 
 class Header extends Component {
@@ -51,14 +52,11 @@ class Header extends Component {
                             <NavItem>
                                 <NavLink  className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
                             </NavItem>
+                            <Button className ="buttonn"color="warning" href="#chatting">
+                            <i class="fa fa-comments-o" aria-hidden="true">Chat With Us</i></Button>
+                         
                             </Nav>
-                            <Nav className="ml-auto" navbar>
-                            <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >
-          <a href="./menu">Search</a></button>
-    </form>
-                            </Nav>
+                      
                             
                         </Collapse>
                     </div>

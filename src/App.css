@@ -198,3 +198,11 @@ address{
   background-position: 50% 50%;
   background-repeat:   no-repeat;
 }
+.chatbot{
+  width:  1100px;
+  height : 200px;
+
+}
+.buttonn{
+  margin-left: 250px;
+}
