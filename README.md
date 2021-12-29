@@ -1,3 +1,8 @@
+It is a single-page application with help of react that will help the user to book appointments for their full body checkup, blood tests, Health check-up, etc at their doorstep.
+Additional Features added:
+Azure Bots as 24 X 7 help desk to solve queries
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
