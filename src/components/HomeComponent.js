@@ -72,7 +72,7 @@ function Home(props) {
       <img  src="../assets/images/banner.png" alt="banner"/>
        </div>
        <div>
-      <img className ="img1" src="../assets/images/How it Works.png" alt="banner"/>
+      <img className ="img1" src="./confusion/How it Works.png" alt="banner"/>
        </div>
        <div class="jumbotron jumbotron-fluid">
       <div class="container">
